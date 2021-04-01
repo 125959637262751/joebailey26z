@@ -1,38 +1,28 @@
 {
-  "name": "vue",
+  "name": "vue-style-guide-creator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "4.1.1",
+    "font-picker-vue": "^1.0.3",
     "vue": "^2.6.11",
-    "vue-color": "2.8.1"
+    "vue-color": "2.8.1",
+    "vue-js-modal": "^2.0.0-rc.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "4.1.1",
     "@vue/cli-service": "4.1.1",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.0.1",
+    "stylelint": "^13.11.0",
+    "stylelint-config-standard": "^20.0.0",
     "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
   },
   "postcss": {
     "plugins": {
@@ -43,11 +33,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "keywords": [
-    "vue",
-    "vuejs",
-    "starter"
-  ],
-  "description": "Vue.js example starter project"
+  ]
 }

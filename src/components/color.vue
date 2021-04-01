@@ -1,14 +1,5 @@
-<style scoped>
-.color {
-  padding: 20px;
-  background-color: var(--color);
-}
-</style>
-
 <template>
-  <div v-if="color" class="color" :style="'--color:' + color.hex">
-    <chrome-picker v-model="color" />
-  </div>
+  <chrome-picker @input="updateColor" v-model="actual" />
 </template>
 
 <script>
@@ -18,11 +9,34 @@ export default {
   components: {
     "chrome-picker": Chrome,
   },
-  name: "color",
-  data: function () {
-    return {
-      color: "#000000",
-    };
+  props: {
+    primary: Boolean,
+    secondary: Boolean,
+    tertiary: Boolean,
+    color: {
+      type: String,
+      default: '#000000'
+    }
   },
-};
+  name: "color",
+  data () {
+    return {
+      actual: null
+    }
+  },
+  beforeMount () {
+    this.actual = this.color
+  },
+  methods: {
+    updateColor () {
+      if (this.primary) {
+        this.$parent.primaryColor = this.actual.hex
+      } else if (this.secondary) {
+        this.$parent.secondaryColor = this.actual.hex
+      } else if (this.tertiary) {
+        this.$parent.tertiaryColor = this.actual.hex
+      }
+    }
+  }
+}
 </script>
