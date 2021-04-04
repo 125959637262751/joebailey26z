@@ -1,0 +1,26 @@
+[[redirects]]
+  from = "https://vue-style-guide-creator.netlify.app/*"
+  to = "https://style-guide-creator.joebailey.xyz/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html" 
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "*" 
+  to = "/"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "upgrade-insecure-requests"
